@@ -19,6 +19,10 @@ CentOS/RHEL:
 YUM is the package manager for CentOS/RHEL
 DNF is also another package manager
 
+uname -mrs --> (to know kernel version)
+cat /etc/centos-release --> (to know centos release version)
+rpm -q centos-linux-release  --> (to know full release version details)
+
 yum check-update(to check if any updated packages are avilable)
 Yum update(to update package list)
 yum upgrade(old packages will be deleted,new packages will be downloaded and to use new packages)
