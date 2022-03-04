@@ -1,0 +1,2 @@
+open -a Docker --> to start docker
+docker ps ---> to list containers running
