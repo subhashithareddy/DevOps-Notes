@@ -1,5 +1,9 @@
 
-APT(Advanced Packaging Tool) is the package manager for Debian/Ubntu
+when you are downloading any binary(nginx,terraform etc) shoub be downloaded to any one of paths configured else linux will not find its intallation.
+Once you downloaded zip, extract zip to one of below paths.
+echo $PATH --> displays paths configiured for machine 
+    ex: subhash@techmoititysMBP ~ % echo $PATH       
+        /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 
 MAC:
@@ -22,4 +26,9 @@ if you want to update only a specific package (sudo yum update pkg_name)
     Ex: sudo yum update nginx
         sudo yum update php
         sudo yum update httpd
+
+Debian/ubuntu:
+--------------
+APT(Advanced Packaging Tool) is the package manager for Debian/Ubntu
+
 
