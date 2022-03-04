@@ -1,9 +1,10 @@
-homebrew is the package manager for MAC
+
 APT(Advanced Packaging Tool) is the package manager for Debian/Ubntu
-YUM is the package manager for CentOS/RHEL
+
 
 MAC:
 ----
+homebrew is the package manager for MAC
 brew update ---> to update brew
 brew upgrade ---> to update all packages and obsolete(delete) old packages & use new packages
 brew upgrade hashicorp/tap/terraform -->to download latest terraform,obsolete(delete) old terraform & use new packages
@@ -11,4 +12,14 @@ brew upgrade hashicorp/tap/terraform -->to download latest terraform,obsolete(de
 
 CentOS/RHEL:
 ------------
+YUM is the package manager for CentOS/RHEL
+yum check-update(to check if any updated packages are avilable)
+Yum update(to refresh package database and install updates)
+yum upgrade(old packages will be deleted and to use new packages)
+reboot machine
+
+if you want to update only a specific package (sudo yum update pkg_name)
+    Ex: sudo yum update nginx
+        sudo yum update php
+        sudo yum update httpd
 
