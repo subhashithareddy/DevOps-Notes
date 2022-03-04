@@ -1,0 +1,14 @@
+homebrew is the package manager for MAC
+APT(Advanced Packaging Tool) is the package manager for Debian/Ubntu
+YUM is the package manager for CentOS/RHEL
+
+MAC:
+----
+brew update ---> to update brew
+brew upgrade ---> to update all packages and obsolete(delete) old packages & use new packages
+brew upgrade hashicorp/tap/terraform -->to download latest terraform,obsolete(delete) old terraform & use new packages
+
+
+CentOS/RHEL:
+------------
+
