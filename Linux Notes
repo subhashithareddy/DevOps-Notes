@@ -17,9 +17,11 @@ brew upgrade hashicorp/tap/terraform -->to download latest terraform,obsolete(de
 CentOS/RHEL:
 ------------
 YUM is the package manager for CentOS/RHEL
+DNF is also another package manager
+
 yum check-update(to check if any updated packages are avilable)
-Yum update(to refresh package database and install updates)
-yum upgrade(old packages will be deleted and to use new packages)
+Yum update(to update package list)
+yum upgrade(old packages will be deleted,new packages will be downloaded and to use new packages)
 reboot machine
 
 if you want to update only a specific package (sudo yum update pkg_name)
