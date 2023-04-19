@@ -1,2 +1,9 @@
+Docker:
+-------
+To package and containarize applications. And to ship them anywhere and run readily.
+Docker manages the containers (which runs apps,libs,dependencies)
+Docker has less isolation as containers share same underlying resources(CPU, Memory, Disk)
+
+
 open -a Docker --> to start docker
 docker ps ---> to list containers running
