@@ -1,7 +1,7 @@
 Docker:
 -------
 To package and containarize applications. And to ship them anywhere and run readily.
-Docker manages the containers (which runs apps,libs,dependencies)
+Docker manages the containers(which runs apps,libs,dependencies)
 Docker has less isolation as containers share same underlying resources(CPU, Memory, Disk)
 Docker consumes less memory, disk space and boot time. so can scale huge no of continers in a short time.
 
@@ -11,6 +11,14 @@ ex: Ansible image is pulbilcy available in dockerhub, we can download it to host
 
    docker run asnible
    docker run mongodb
+   
+Images vs Containers:
+--------------------
+Images are packages or templates for an application
+images are used to create containers
+developer writes a docker file from which a docker image is built. Devops team creates docker container using the docker image
+
+    docker file -----> docker image------> docker container
 
 
 
