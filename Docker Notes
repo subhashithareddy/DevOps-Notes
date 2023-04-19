@@ -16,6 +16,7 @@ Images vs Containers:
 --------------------
 Images are packages or templates for an application
 images are used to create containers
+'N' no of containers can be created from same image.
 developer writes a docker file from which a docker image is built. Devops team creates docker container using the docker image
 
     docker file -----> docker image------> docker container
