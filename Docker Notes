@@ -7,7 +7,7 @@ Docker consumes less memory, disk space and boot time. so can scale huge no of c
 
 Dockers images are stored in dockerhub or docker store from where we can download images and make them run
 ex: Ansible image is pulbilcy available in dockerhub, we can download it to host machine.
-    Install docker on your host nmachine and create a container for ansible by using below command
+    Install docker on your host machine and create a container for ansible by using below command.
 
    docker run asnible
    docker run mongodb
