@@ -3,6 +3,7 @@ Docker:
 To package and containarize applications. And to ship them anywhere and run readily.
 Docker manages the containers (which runs apps,libs,dependencies)
 Docker has less isolation as containers share same underlying resources(CPU, Memory, Disk)
+Docker consumes less memory, disk space and boot time. so can scale huge no of continers in a short time.
 
 Dockers images are stored in dockerhub or docker store from where we can download images and make them run
 ex: Ansible image is pulbilcy available in dockerhub, we can download it to host machine.
