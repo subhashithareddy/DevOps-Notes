@@ -33,8 +33,8 @@ Docker Commands:
 docker pull nginx               ---> Downloads the image of nginx from dockerhub to host machoine and will not create container
 docker run nginx                ---> checks whether image is available in host machine, if not available connects to docker hub, 
                                      downloads image and creates container
-docker ps                       ---> to list containers running
-docker ps -a                    ---> to list containers riunning and exited previously
+docker ps                       ---> to list running containers 
+docker ps -a                    ---> to list running and stopped containers
 docker stop $ContainerID/Name   ---> stops a running container
 docker rm $ContainerID/Name     ---> to remove stopped/exited container perminantly. so that we can save space consumed by container
 docker images                   ---> to list images on host machine
