@@ -62,8 +62,8 @@ docker exec $ContainerName Command
 
 
 
-Run - attach or detach:
-----------------------
+Run - attach(foreground) or detach(background):
+----------------------------------------------
 I have created a image for a web application. The repository name is "subhash/simple-web-app" which runs a web server on port 8080.
 Ex: docker run subhash/simple-web-app
 Above commnad runs in foreground meaning attached to standand output of container. able to see output of werservice on screen
@@ -74,7 +74,7 @@ so that we can execute commands on container.
 Ex: docker run -d subhash/simple-web-app.
 
 if you want to bring background running container to foreground 
-Exl docker attach $ConTainerID
+Ex: docker attach $ConTainerID/Name
 
 
 
