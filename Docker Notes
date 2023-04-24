@@ -46,7 +46,7 @@ You can not run os base image in a container, container will exit immedietly bec
 ex: docker run ubuntu
 
 Executing a coomand while starting/running a container:
--------------------------------------------------
+------------------------------------------------------
 Passing command to a container to run rather than exiting, you can append commands
 
 ex: docker run ubuntu sleep 5
@@ -54,7 +54,9 @@ ex: docker run ubuntu sleep 5
 which means a container for ubuntu is created and goes to sleep mode for 5secs and then exits.
 
 Executing a coomand on a running the container:
--------------------------------------------------
+-----------------------------------------------
+docker exec ubuntu cat /etc/hosts
+docker exec $ContainerName Command
 
 
 
