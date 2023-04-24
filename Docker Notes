@@ -45,6 +45,9 @@ Container is meant to run a specific process/application or a task. When the app
 You can not run os base image in a container, container will exit immedietly because os image has nothing to run
 ex: docker run ubuntu
 
+if you want to instruct container for os image to run rather than exiting, you can append commands
+ex: docker run ubuntu sleep 5
+which means a container for ubuntu is created and goes to sleep mode for 5secs and then exits.
 
 
 
