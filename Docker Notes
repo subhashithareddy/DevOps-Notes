@@ -41,19 +41,26 @@ docker images                   ---> to list images on host machine
 docker rmi $image_name          ---> to remove image from host machine. Make sure you delete all running containers and 
                                      dependents before removing image
                                      
+
+
+
 Container is meant to run a specific process/application or a task. When the application/process exited or task is completed, container exits.
-You can not run os base image in a container, container will exit immedietly because os image has nothing to run
+You can not run os base image in a container, base image container will exit immedietly because os image has nothing to run
 Ex: docker run ubuntu
-
-
 
 Executing a coomand while starting/running a container:
 ------------------------------------------------------
 Passing command to a container to run rather than exiting, you can append commands
-Ex: docker run ubuntu sleep 5
+Ex1: docker run ubuntu sleep 5
 which means a container for ubuntu is created and goes to sleep mode for 5secs and then exits.
 
-
+Ex2: docker run -it ubuntu bash
+     "-it" option will help to automatically log into container. now you are logged into container and execute commands in OS
+     
+     cat /etc/hosts
+     systemctl status ssh
+     
+     
 
 Executing a coomand on a running the container:
 -----------------------------------------------
@@ -67,7 +74,7 @@ Run - attach(foreground) or detach(background):
 I have created a image for a web application. The repository name is "subhash/simple-web-app" which runs a web server on port 8080.
 Ex: docker run subhash/simple-web-app
 Above commnad runs in foreground meaning attached to standand output of container. able to see output of werservice on screen
-You can do anything on container unless it stops.
+You can't do anything on container unless it stops.
 
 If you want to run above simple-webapp in background mode.  Containers continues to run in background.
 so that we can execute commands on container.
