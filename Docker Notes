@@ -66,7 +66,7 @@ Run - attach or detach:
 ----------------------
 I have created a image for a web application. The repository name is "subhash/simple-web-app" which runs a web server on port 8080.
 ex: docker run subhash/simple-web-app
-above commnad runs in foreground meaning attached to standand output of container
+above commnad runs in foreground meaning attached to standand output of container. able to see output of werservice on screen
 
 
 
