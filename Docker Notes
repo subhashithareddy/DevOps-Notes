@@ -45,7 +45,7 @@ Container is meant to run a specific process/application or a task. When the app
 You can not run os base image in a container, container will exit immedietly because os image has nothing to run
 ex: docker run ubuntu
 
-Executing a coomand while starting the container:
+Executing a coomand while starting/running a container:
 -------------------------------------------------
 Passing command to a container for os image to run rather than exiting, you can append commands
 
