@@ -59,6 +59,9 @@ Ex2: docker run -it ubuntu bash
      
      cat /etc/hosts
      systemctl status ssh
+     exit
+     
+     exit command helps to exit from ubuntu container.
      
      
 
