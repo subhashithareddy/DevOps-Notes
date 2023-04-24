@@ -27,9 +27,19 @@ Community Edition
 Enterprise Edition: Image management
                     Image security
                     Universal control plane for container management, orchestration for container runtime
+                    
+Docker Commands:
+----------------
+docker pull nginx         ---> just pulls the image of nginx from dockerhub and will not create container
+docker run nginx          ---> checks whether image is available in host machine, if not available connects to docker hub, downloads image and creates container
+docker ps                 ---> to list containers running
+docker ps -a              ---> to list containers riunning and exited previously
+
+
+
 
 
 
 
 open -a Docker --> to start docker
-docker ps ---> to list containers running
+
