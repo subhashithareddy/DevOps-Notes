@@ -45,18 +45,28 @@ Container is meant to run a specific process/application or a task. When the app
 You can not run os base image in a container, container will exit immedietly because os image has nothing to run
 ex: docker run ubuntu
 
+
+
 Executing a coomand while starting/running a container:
 ------------------------------------------------------
 Passing command to a container to run rather than exiting, you can append commands
-
 ex: docker run ubuntu sleep 5
-
 which means a container for ubuntu is created and goes to sleep mode for 5secs and then exits.
+
+
 
 Executing a coomand on a running the container:
 -----------------------------------------------
 docker exec ubuntu cat /etc/hosts
 docker exec $ContainerName Command
+
+
+
+Run - attach or detach:
+----------------------
+I have created a image for a web application. The repository name is "subhash/simple-web-app" which runs a web server on port 8080.
+ex: docker run subhash/simple-web-app
+above commnad runs in foreground meaning attached to standand output of container
 
 
 
