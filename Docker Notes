@@ -30,12 +30,13 @@ Enterprise Edition: Image management
                     
 Docker Commands:
 ----------------
-docker pull nginx         ---> just pulls the image of nginx from dockerhub and will not create container
-docker run nginx          ---> checks whether image is available in host machine, if not available connects to docker hub, downloads image and creates container
-docker ps                 ---> to list containers running
-docker ps -a              ---> to list containers riunning and exited previously
-
-
+docker pull nginx               ---> Downloads the image of nginx from dockerhub to host machoine and will not create container
+docker run nginx                ---> checks whether image is available in host machine, if not available connects to docker hub, 
+                                     downloads image and creates container
+docker ps                       ---> to list containers running
+docker ps -a                    ---> to list containers riunning and exited previously
+docker stop $ContainerID/Name   ---> stops a running container
+docker rm $ContainerID/Name     ---> to remove stopped/exited container perminantly. so that we can save space consumed by container
 
 
 
