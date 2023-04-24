@@ -40,8 +40,10 @@ docker rm $ContainerID/Name     ---> to remove stopped/exited container perminan
 docker images                   ---> to list images on host machine
 docker rmi $image_name          ---> to remove image from host machine. Make sure you delete all running containers and 
                                      dependents before removing image
-
-
+                                     
+Container is meant to run a specific process/application or a task. When the application/process exited or task is completed, container exits.
+You can not run os base image in a container, container will exit immedietly because os image has nothing to run
+ex: docker run ubuntu
 
 
 
