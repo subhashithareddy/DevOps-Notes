@@ -51,24 +51,32 @@ Ex: docker run ubuntu
 Executing a coomand while starting/running a container:
 ------------------------------------------------------
 Passing command to a container to run rather than exiting, you can append commands
-Ex1: docker run ubuntu sleep 5
+Ex1:    docker run ubuntu sleep 5
 which means a container for ubuntu is created and goes to sleep mode for 5secs and then exits.
 
-Ex2: docker run -it ubuntu bash
-     "-it" option will help to automatically log into container. now you are logged into container and execute commands in OS
+Ex2:    docker run -it ubuntu bash
+         "-it" option will help to automatically log into container. now you are logged into container and execute commands in OS
      
-     cat /etc/hosts
-     systemctl status ssh
-     exit
+        cat /etc/hosts
+        systemctl status ssh
+        exit
      
-     exit command helps to exit from ubuntu container.
+        exit command helps to exit from ubuntu container.
      
      
 
 Executing a coomand on a running the container:
 -----------------------------------------------
-docker exec ubuntu cat /etc/hosts
-docker exec $ContainerName Command
+"docker run ubuntu sleep 100" command will run ubuntu and sleeps for 100sec means container is up and run for 100 secs
+"docker ps" will show this container upto 100secs maximum after that will not show.
+
+if you want to execute a command with in that 100secs of container living time, can do as below
+Ex1:    docker exec ubuntu cat /etc/hosts
+        docker exec $ContainerName Command
+        
+Ex2:    docker run -d ubuntu sleep20        
+
+
 
 
 
