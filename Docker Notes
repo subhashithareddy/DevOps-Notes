@@ -37,6 +37,10 @@ docker ps                       ---> to list containers running
 docker ps -a                    ---> to list containers riunning and exited previously
 docker stop $ContainerID/Name   ---> stops a running container
 docker rm $ContainerID/Name     ---> to remove stopped/exited container perminantly. so that we can save space consumed by container
+docker images                   ---> to list images on host machine
+docker rmi $image_name          ---> to remove image from host machine. Make sure you delete all running containers and 
+                                     dependents before removing image
+
 
 
 
