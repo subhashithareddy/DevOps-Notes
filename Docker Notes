@@ -112,6 +112,21 @@ docker run command will create a container but will take not take inputs from do
 "docker run -it ubuntu bash" will take inputs now
 "i" option is used for interactoive mode
 "t" option is used to attach  docker host machine termincal 
+
+run - port mapping:
+------------------
+when a container(simple web app) is running on a docker host machine, a dedicated internal ip is created for each container.
+from docker host machine, you can access application running using http://IP:PORT/
+
+Ex1:    "docker run subhash/simple-web-app" 
+        command creates container ruuning web app on port 5000
+        can be accessed using http://172.2.9.2:5000
+        
+if you want to access above webapp outside docker host machine, you should do port mapping between docker host machine and container.
+Ex2:    "docker run -p 80:5000 subhash/simple-web-app" 
+         creates a container running on port 5000 mapped to port 80 of docker host machine
+         can be accesed using http://1.2.3.4:80 where 1.2.3.4 IP is docker host machine IP
+
         
 
 
