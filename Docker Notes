@@ -36,6 +36,7 @@ docker run nginx                ---> checks whether image is available in host m
 docker ps                       ---> to list running containers 
 docker ps -a                    ---> to list running and stopped containers
 docker stop $ContainerID/Name   ---> stops a running container
+docker inspect $ContainerID/Name---> will provide more in formation about docker container
 docker rm $ContainerID/Name     ---> to remove stopped/exited container perminantly. so that we can save space consumed by container
 docker images                   ---> to list images on host machine
 docker rmi $image_name          ---> to remove image from host machine. Make sure you delete all running containers and 
@@ -126,9 +127,26 @@ if you want to access above webapp outside docker host machine, you should do po
 Ex2:    "docker run -p 80:5000 subhash/simple-web-app" 
          creates a container running on port 5000 mapped to port 80 of docker host machine
          can be accesed using http://1.2.3.4:80 where 1.2.3.4 IP is docker host machine IP
+         
+run - volume mapping:
+--------------------
+docker container has its own file system with in the container. when container exits file system will be destroyed.
+to avoid data loss, we can map docker container file system to docker host machine file system.
+
+Ex1:    "docker run mysql" 
+        creates a mysql container with docker container file system mapped to "/var/lib/mysql" 
+
+Ex2:    "docker run -v /opt/datadir:/var/lib/mysql mysql" 
+        will map to docker host machine file system to docker container file system.
 
         
+Container logs:
+---------------
+how to see logs of a container running in background?
 
+Ex1:    "docker run -d subhash/simple-web-app" will run container in background mode
+
+Ex2:    "docker logs $containerName" will give logs about container.
 
 
 
