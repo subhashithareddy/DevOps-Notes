@@ -35,7 +35,7 @@ docker run nginx                ---> checks whether image is available in host m
                                      downloads image and creates container
 docker ps                       ---> to list running containers 
 docker ps -a                    ---> to list running and stopped containers
-docker stop $ContainerID/Name   ---> stops a running container
+docker stop $ContainerID/Name   ---> stops a running container(most useful when container running in attch mode)
 docker inspect $ContainerID/Name---> will provide more in formation about docker container
 docker rm $ContainerID/Name     ---> to remove stopped/exited container perminantly. so that we can save space consumed by container
 docker images                   ---> to list images on host machine
