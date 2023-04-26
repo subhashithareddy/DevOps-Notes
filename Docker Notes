@@ -96,7 +96,7 @@ if you want to bring background running container to foreground
 Ex: docker attach $ConTainerID/Name
 
 
-Docker Tags:
+run - tag:
 -----------
 Docker tags help you to which version of image should be running in container.
 Ex1:    docker run nginx
@@ -105,7 +105,10 @@ Ex2:    docker run nginx:3.6
         The command will look for 3.6 version of nginx image in dockerhub and run it.
         
         
-       
+
+
+
+
 
 
 
