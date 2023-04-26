@@ -104,6 +104,14 @@ Ex1:    docker run nginx
 Ex2:    docker run nginx:3.6
         The command will look for 3.6 version of nginx image in dockerhub and run it.
         
+
+run - stdin:
+------------
+docker run command will create a container but will take not take inputs from docker host machine
+
+"docker run -it ubuntu bash" will take inputs now
+"i" option is used for interactoive mode
+"t" option is used to attach  docker host machine termincal 
         
 
 
