@@ -176,8 +176,10 @@ Writing a docker file from maniual steps:
 -----------------------------------------
 create a file named Dockerfile
 
-``` 
-FROM ubuntu
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
 ```
 
 
