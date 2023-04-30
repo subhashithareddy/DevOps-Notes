@@ -155,6 +155,8 @@ Ex2:    "docker logs $containerName" will give logs about container.
 
 
 
+
+
 Docker Images:
 --------------
 why we need to build ouw own image?
@@ -169,8 +171,8 @@ Manual steps involved:
     2) update source repos using 'apt update'
     3) install dependincies using apt
     4) Install p[ython dependencies using PIP
-    5) copy source code from docker host machine to docker container
-    6) run the webserver using flask command
+    5) copy source code from docker host machine to docker image
+    6) command to run when the image is run as container
     
 Writing a docker file from maniual steps:
 -----------------------------------------
@@ -201,6 +203,10 @@ docker push subhashithareddy/simple-web-app
 
 'subhashithareddy' is dockerhub account name
 'simple-web-app' is image name
+
+
+docker builds images in layered architecture and caches it. Which means the previous step is stored in next step.
+when a step fails, docker retrieves information form cache and starts where it failed. No need to rerun previous step unless any changes.
 
 
 
