@@ -176,6 +176,8 @@ Writing a docker file from maniual steps:
 -----------------------------------------
 create a file named Dockerfile
 
+INSTRUCTION ARGUMENT
+
 ```
 FROM ubuntu
 RUN apt-get update && apt-get update -y install python
@@ -183,7 +185,25 @@ RUN pip install flask flask-mysql
 copy .  /opt/source-code
 ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 ```
-fgcvn
+
+
+How to buidl image from docker file locally:
+--------------------------------------------
+docker build . -f Dockerfile -t subhashithareddy/simple-web-app
+
+-f is filename from. which image should build
+-t is tag
+
+
+to push locally created image to dockerhub:
+-------------------------------------------
+docker push subhashithareddy/simple-web-app
+
+'subhashithareddy' is dockerhub account name
+'simple-web-app' is image name
+
+
+
 
 
 
