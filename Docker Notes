@@ -153,5 +153,44 @@ Ex2:    "docker logs $containerName" will give logs about container.
 
 
 
+
+
+Docker Images:
+--------------
+why we need to build ouw own image?
+--> if you don't find a image in dockerhub as per your requirement, you can create your own image 
+--> for the easy of shipping and containarizing the application
+
+
+if you want to containarioze a applicatoon(flask), write down manual steps involved from which you can create image.
+Manual steps involved:
+---------------------
+    1) OS- ubuntu
+    2) update source repos using 'apt update'
+    3) install dependincies using apt
+    4) Install p[ython dependencies using PIP
+    5) copy source code from docker host machine to docker container
+    6) run the webserver using flask command
+    
+Writing a docker file from maniual steps:
+-----------------------------------------
+create a file named Dockerfile
+
+``` 
+FROM ubuntu
+```
+
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
 open -a Docker --> to start docker
 
