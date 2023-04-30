@@ -218,7 +218,7 @@ Environment variables helps to supply values to a variable in application code i
 
 Ex: "docker run -e COLOUR='blue' simple-web-app" colour blue is supplied to simple-web-app application while running container
 
-The Env varaibles can be seen in "Config:" portion of "docker inspect $ImageName" for a running container.
+The list of Env varaibles can be seen in "Config:" portion of "docker inspect $ImageName" for a running container.
 
 
 
