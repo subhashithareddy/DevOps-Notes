@@ -191,7 +191,7 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 
 How to buidl image from docker file locally:
 --------------------------------------------
-docker build . -f Dockerfile -t subhashithareddy/simple-web-app
+docker build . -f Dockerfile -t simple-web-app
 
 -f is filename from. which image should build
 -t is tag
@@ -199,6 +199,8 @@ docker build . -f Dockerfile -t subhashithareddy/simple-web-app
 
 to push locally created image to dockerhub:
 -------------------------------------------
+"docker build . -f Dockerfile -t subhashithareddy/simple-web-app" ----> build image as $AccountName/$ImageName
+docker login $AccountName
 docker push subhashithareddy/simple-web-app
 
 'subhashithareddy' is dockerhub account name
@@ -206,7 +208,7 @@ docker push subhashithareddy/simple-web-app
 
 
 docker builds images in layered architecture and caches it. Which means the previous step is stored in next step.
-when a step fails, docker retrieves information form cache and starts where it failed. No need to rerun previous step unless any changes.
+when a step fails, docker retrieves information form cache and starts where it failed. docker no need to rerun previous step unless any changes.
 
 
 
