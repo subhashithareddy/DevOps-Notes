@@ -177,10 +177,15 @@ Writing a docker file from maniual steps:
 create a file named Dockerfile
 
 ```
-function test() {
-  console.log("notice the blank line before this function?");
-}
+FROM ubuntu
+RUN apt-get update && apt-get update -y install python
+RUN pip install flask flask-mysql
+copy .  /opt/source-code
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 ```
+fgcvn
+
+
 
 
     
