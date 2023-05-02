@@ -157,6 +157,8 @@ Ex2:    "docker logs $containerName" will give logs about container.
 
 
 
+
+
 Docker Images:
 --------------
 why we need to build ouw own image?
@@ -219,6 +221,42 @@ Environment variables helps to supply values to a variable in application code i
 Ex: "docker run -e COLOUR='blue' simple-web-app" colour blue is supplied to simple-web-app application while running container
 
 The list of Env varaibles can be seen in "Config:" portion of "docker inspect $ImageName" for a running container.
+
+
+
+
+
+
+
+
+
+
+
+Docker Compose:
+--------------
+When you want to up and run a complexx application consist of multiple things'(ansible,redis,simple-web-app,jenkins), 
+rather than running in a multiple containers, we can use a single conatiner with the help of docker compose.
+
+docker-compose.yaml:
+services:
+     orchestration:
+        image: "ansible"
+     messaging: 
+         image: "redis:alphine"
+     web:
+        image: "subhashithareddy/simple-web-app"
+     ci:
+       image: "jenkins"
+
+
+"docker-compose up" is command used to run compose up
+
+
+        
+     
+     
+     
+
 
 
 
