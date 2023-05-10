@@ -47,7 +47,7 @@ docker rmi $image_name          ---> to remove image from host machine. Make sur
 
 
 Container is meant to run a specific process/application or a task. When the application/process exited or task is completed, container exits.
-You can not run os base image in a container, base image container will exit immedietly because os image has nothing to run
+You can not run only os base image in a container, base image container will exit immedietly because os image has nothing to run
 Ex: docker run ubuntu
 container will create and exit immedietly. "docker ps" will not show image
 
