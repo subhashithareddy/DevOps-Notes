@@ -89,6 +89,7 @@ Ex1:    docker exec ubuntu cat /etc/hosts
 Run - attach(foreground) or detach(background):
 ----------------------------------------------
 I have created a image for a web application. The repository name is "subhash/simple-web-app" which runs a web server on port 8080.
+
 Ex: docker run subhash/simple-web-app
 Above commnad runs in foreground meaning attached to standand output of container. 
 You can't do anything on container unless it stops.
@@ -104,6 +105,7 @@ Ex: docker attach $ConTainerID/Name
 run - tag:
 -----------
 Docker tags help you to which version of image should be running in container.
+
 Ex1:    docker run nginx
         This command will download latest version(tag=latest) aavailble in docker hub and createds containers
 Ex2:    docker run nginx:3.6
