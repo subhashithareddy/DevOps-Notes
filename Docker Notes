@@ -41,6 +41,7 @@ docker rm $ContainerID/Name     ---> to remove stopped/exited container perminan
 docker images                   ---> to list images on host machine
 docker rmi $image_name          ---> to remove image from host machine. Make sure you delete all running containers and 
                                      dependents before removing image
+docker inspect $image_name      ---> to see configuration of a docker image
                                      
 
 
