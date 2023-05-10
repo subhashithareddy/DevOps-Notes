@@ -74,7 +74,7 @@ Ex2:    docker run -it ubuntu bash
 Executing a coomand on a running the container:
 -----------------------------------------------
 "docker run ubuntu sleep 100" command will run ubuntu and sleeps for 100sec means container is up and run for 100 secs
-"docker ps" will show this container upto 100secs maximum after that will not show.
+"docker ps" will show this container upto 100secs maximum after that will be in stopped state.
 
 if you want to execute a command with in that 100secs of container living time, can do as below
 Ex1:    docker exec ubuntu cat /etc/hosts
