@@ -224,7 +224,7 @@ Environment Variables:
 ----------------------
 Environment variables helps to supply values to a variable in application code in an image from which aconatiner is build.
 
-Ex: "docker run -e COLOUR='blue' simple-web-app" colour blue is supplied to simple-web-app application while running container
+Ex: "docker run -e COLOUR='blue' simple-web-app" colour blue is supplied to simple-web-app application while starting container
 
 The list of Env varaibles can be seen in "Config:" portion of "docker inspect $ImageName" for a running container.
 
