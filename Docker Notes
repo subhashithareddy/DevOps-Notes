@@ -219,7 +219,9 @@ docker push subhashithareddy/simple-web-app
 docker builds images in layered architecture and caches it. Which means the previous step is stored in next step.
 when a step fails, docker retrieves information form cache and starts where it failed. docker no need to rerun previous step unless any changes.
 
-
+CMD vs Entrypoint:
+------------------
+did not understand
 
 Environment Variables:
 ----------------------
