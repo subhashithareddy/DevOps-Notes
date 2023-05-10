@@ -56,7 +56,7 @@ Executing a coomand while starting/running a container:
 Passing command to a container to run rather than exiting, you can append commands
 Ex1:    docker run ubuntu sleep 5
 which means a container for ubuntu is created and goes to sleep mode for 5secs and then exits.
-for 5sec, container is running. "docker ps" will show show container details for 5sec. after 5secs wont show.
+for 5sec, container is running. "docker ps" will show show container details for 5sec. after 5secs will be in stopped status.
 
 Ex2:    docker run -it ubuntu bash
          "-it" option will help to automatically log into container. now you are logged into container and execute commands in OS
