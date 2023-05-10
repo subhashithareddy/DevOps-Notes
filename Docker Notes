@@ -61,6 +61,7 @@ for 5sec, container is running. "docker ps" will show show container details for
 
 Ex2:    docker run -it ubuntu bash
          "-it" option will help to automatically log into container. now you are logged into container and execute commands in OS
+         you will be logged into container.
      
         cat /etc/hosts
         systemctl status ssh
