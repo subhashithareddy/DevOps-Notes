@@ -243,34 +243,19 @@ The list of Env varaibles can be seen in "Config:" portion of "docker inspect $I
 
 Docker Compose:
 --------------
-When you want to up and run a complexx application consist of multiple things'(ansible,redis,simple-web-app,jenkins), 
-rather than writing multiple docker files, we can use a single file to spin up multiple containers.
 
-docker-compose.yaml:
-services:
-     orchestration:
-        image: "ansible"
-     messaging: 
-         image: "redis:alphine"
-     web:
-        image: "subhashithareddy/simple-web-app"
-     ci:
-       image: "jenkins"
-
-
-"docker-compose up" is command used to run compose up
-
-
-run - link: COULD BE DEPRECATED
------------
-to link a container with another code.
+docker run - link: COULD BE DEPRECATED
+------------------
+to link a container with another conatiner(network))
 
 Ex1: 
 Front end voting web app- Python(Running in a container named Vote on port 80)
 Backend databse to store voting count- Redis DB(Running in a separate container named redis)
+Results web app to how results- nodejs(Running in a separate container named results)
 
 docker run -d --name=vote -p 5000:80 voting-app
-docker run -d --name=redis -p 500:80 redis
+docker run -d --name=redis redis
+docker run -d --name=results -p 5001:80 results-app
 
 In a front end web based voting app(Democrats vs Republicans), when some one votes for  democrats, the count for 
 democrats should be incresed by 1 in redis database(vote table with democrats and rebulic columns).
@@ -278,11 +263,43 @@ democrats should be incresed by 1 in redis database(vote table with democrats an
 when some one votes for Democrat, the vote app code will try to connect to redis DB.
 But these 2 containers are not linked which means, the vote app not able to connect to redis db which is running in separate container.
 
-
-
 to link containers we use --link option
 docker run -d --name=vote -p 5000:80 --link redis(name of container):redis(hostname)
+docker run -d --name=results -p 5001:80 --link redis(name of container):redis(hostname)
 
+
+
+
+
+
+
+When you want to up and run a complexx application consist of multiple things'(ansible,redis,simple-web-app,jenkins), 
+rather than writing multiple docker files, we can use a single file to spin up multiple containers at one shot.
+
+
+
+the above voting app can be written in a singlr docker compose as below rather than writing multiple docker files.
+docker-compose.yaml: voting app
+--------------------
+version: 1
+Redis:
+    image: redis
+Vote: 
+    image: subhashithareddyvoting-app
+    ports: 5000:80
+    
+Results:
+    image: subhashithareddy/results-app
+    ports: 5000:81
+    
+    
+"docker-compose up" is command used to run compose up
+
+
+docker-compose - build:
+-----------------------
+when docker compose is having a custom application, u may not have image readily available in dockerhub.
+we us build option to specify directoty path  of (docker file and sourcecode of appl). so that image will be build from that path.
 
 
 
