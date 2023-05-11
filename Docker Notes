@@ -286,12 +286,16 @@ redis:
     image: redis
 vote: 
     image: subhashithareddy/voting-app
-    ports: 5000:80
-    links: redis
+    ports: 
+        - 5000:80
+    links: 
+        - redis
 results:
     image: subhashithareddy/results-app
-    ports: 5000:81
-    links: redis
+    ports: 
+        - 5000:81
+    links: 
+        - redis
     
     
 "docker-compose up" is command used to run compose up
