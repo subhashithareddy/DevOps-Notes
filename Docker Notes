@@ -281,7 +281,7 @@ But these 2 containers are not linked which means, the vote app not able to conn
 
 
 to link containers we use --link option
-docker run -d --name=vote -p 5000:80 --link redis(name of container):redis(hostname voting-app)
+docker run -d --name=vote -p 5000:80 --link redis(name of container):redis(hostname)
 
 
 
