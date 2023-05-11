@@ -261,6 +261,31 @@ services:
 "docker-compose up" is command used to run compose up
 
 
+run - link: COULD BE DEPRECATED
+-----------
+to link a container with another code.
+
+Ex1: 
+Front end voting web app- Python(Running in a container named Vote on port 80)
+Backend databse to store voting count- Redis DB(Running in a separate container named redis)
+
+docker run -d --name=vote -p 5000:80 voting-app
+docker run -d --name=redis -p 500:80 redis
+
+In a front end web based voting app(Democrats vs Republicans), when some one votes for  democrats, the count for 
+democrats should be incresed by 1 in redis database(vote table with democrats and rebulic columns).
+
+when some one votes for Democrat, the vote app code will try to connect to redis DB.
+But these 2 containers are not linked which means, the vote app not able to connect to redis db which is running in separate container.
+
+
+
+to link containers we use --link option
+docker run -d --name=vote -p 5000:80 --link redis(name of container):redis(hostname voting-app)
+
+
+
+
         
      
      
