@@ -341,7 +341,7 @@ vote:                                           vote:                           
     links:                                          depends_on:                                     
         - redis                                          - redis                                         
 results:                                        results:                                        results:
-    image: ./results-app                            image: ./results-app                            image: ./results-app
+    build: ./results-app                            build: ./results-app                            build: ./results-app
     ports:                                          ports:                                          ports:
         - 5000:81                                       - 5000:81                                       - 5000:81
     links:                                          depends_on:
