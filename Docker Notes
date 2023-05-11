@@ -279,7 +279,7 @@ rather than writing multiple docker files, we can use a single file to spin up m
 
 
 the above voting app can be written in a singlr docker compose as below rather than writing multiple docker files.
-docker-compose.yaml: voting app
+docker-compose.yaml: elections-app
 --------------------
 version: 1
 redis:
@@ -298,13 +298,31 @@ results:
         - redis
     
     
-"docker-compose up" is command used to run compose up
+"docker-compose up" is command used to spin up 3 conatiners.
 
 
 docker-compose - build:
 -----------------------
-when docker compose is having a custom application, u may not have image readily available in dockerhub.
+when docker compose is having a custom application(vote and results), u may not have image readily available in dockerhub.
 we us build option to specify directoty path  of (docker file and sourcecode of appl). so that image will be build from that local path.
+
+docker-compose.yaml: voting app
+--------------------
+version: 1
+redis:
+    image: redis
+vote: 
+    image: ./voting-app          (path to locan system directory whereb docker file and source code available)
+    ports: 
+        - 5000:80
+    links: 
+        - redis
+results:
+    image: ./results-app        (path to locan system directory whereb docker file and source code available)
+    ports: 
+        - 5000:81
+    links: 
+        - redis
 
 
 
