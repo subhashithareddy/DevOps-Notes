@@ -282,15 +282,16 @@ the above voting app can be written in a singlr docker compose as below rather t
 docker-compose.yaml: voting app
 --------------------
 version: 1
-Redis:
+redis:
     image: redis
-Vote: 
-    image: subhashithareddyvoting-app
+vote: 
+    image: subhashithareddy/voting-app
     ports: 5000:80
-    
-Results:
+    links: redis
+results:
     image: subhashithareddy/results-app
     ports: 5000:81
+    links: redis
     
     
 "docker-compose up" is command used to run compose up
@@ -299,7 +300,9 @@ Results:
 docker-compose - build:
 -----------------------
 when docker compose is having a custom application, u may not have image readily available in dockerhub.
-we us build option to specify directoty path  of (docker file and sourcecode of appl). so that image will be build from that path.
+we us build option to specify directoty path  of (docker file and sourcecode of appl). so that image will be build from that local path.
+
+
 
 
 
