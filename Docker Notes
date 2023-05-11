@@ -306,13 +306,12 @@ docker-compose - build:
 when docker compose is having a custom application(vote and results), u may not have image readily available in dockerhub.
 we us build option to specify directoty path  of (docker file and sourcecode of appl). so that image will be build from that local path.
 
-docker-compose.yaml: voting app
---------------------
-version: 1
+
+docker-compose.yaml: 
 redis:
     image: redis
 vote: 
-    image: ./voting-app          (path to locan system directory whereb docker file and source code available)
+    build: ./voting-app          (path to locan system directory whereb docker file and source code available)
     ports: 
         - 5000:80
     links: 
@@ -323,13 +322,35 @@ results:
         - 5000:81
     links: 
         - redis
-
-
-
-
-
         
-     
+
+
+
+
+docker-compose - versions:
+-------------------------
+docker-compose.yaml:                        docker-compose.yaml:                             docker-compose.yaml: 
+                                            version: 2                                       version: 3
+                                            services:                                        services:
+redis:                                          redis:                                          redis:
+    image: redis                                    image: redis                                    image: redis
+vote:                                           vote:                                           vote:
+    build: ./voting-app                             build: ./voting-app                             build: ./voting-app
+    ports:                                          ports:                                          ports:  
+        - 5000:80                                        - 5000:80                                       - 5000:80
+    links:                                          depends_on:                                     
+        - redis                                          - redis                                         
+results:                                        results:                                        results:
+    image: ./results-app                            image: ./results-app                            image: ./results-app
+    ports:                                          ports:                                          ports:
+        - 5000:81                                       - 5000:81                                       - 5000:81
+    links:                                          depends_on:
+        - redis                                         - redis                                             
+        
+        
+  verion 1: no need to specify
+  version 2: specify version no, creates a auto bridge network(no need to specify links), depends_on option to startup order
+  veriosn 3: specify version no, creates a auto bridge network(no need to specify links), docker swam(no depends_on)
      
      
 
