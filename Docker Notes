@@ -244,7 +244,7 @@ The list of Env varaibles can be seen in "Config:" portion of "docker inspect $I
 Docker Compose:
 --------------
 When you want to up and run a complexx application consist of multiple things'(ansible,redis,simple-web-app,jenkins), 
-rather than running in a multiple containers, we can use a single conatiner with the help of docker compose.
+rather than writing multiple docker files, we can use a single file to spin up multiple containers.
 
 docker-compose.yaml:
 services:
