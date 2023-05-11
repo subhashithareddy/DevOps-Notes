@@ -351,8 +351,37 @@ results:                                        results:                        
   verion 1: no need to specify
   version 2: specify version no, creates a auto bridge network(no need to specify links), depends_on option to startup order
   veriosn 3: specify version no, creates a auto bridge network(no need to specify links), docker swam(no depends_on)
-     
-     
+  
+  
+  
+docker-compose.yaml - networks:
+-------------------
+ version: 3
+ services:
+    redis:
+        image: redis
+    vote:
+        build: ./voting-app
+        ports:  
+            - 5000:80
+        networks: 
+            - front-end
+            - back-end
+    results:
+        build: ./results-app
+        ports:
+            - 5000:80
+        networks:
+            - front-end
+            - back-end
+  networks:
+    front-end:
+    back-end:
+            
+        
+        
+    
+ 
 
 
 
