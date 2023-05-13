@@ -411,6 +411,9 @@ Ex:
   push image to private registry
             docker push localhost:5000/my-image
             
+  step3:
+  how to pull image
+            docker pull localhost:5000/my-image
   Step3:
   how to run image
             docker run subhash.io/apps/first-app
