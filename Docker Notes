@@ -353,7 +353,8 @@ results:                                        results:                        
   veriosn 3: specify version no, creates a auto bridge network(no need to specify links), docker swam(no depends_on)
   
   
-  
+
+
 docker-compose.yaml - networks:
 -------------------
  version: 3
@@ -378,6 +379,48 @@ docker-compose.yaml - networks:
     front-end:
     back-end:
             
+           
+           
+           
+Docker Private Registry:
+ ------------------------
+Docker.io is the registry for public images provided bby docker
+ 
+Ex: 
+                    docker.io/nginx/nginx
+                   Registry  Account Image
+                      Name    Name    Name
+                      
+                      
+ You can maintain private registry within your company. 
+ Docker provides an image called REGISTRY which can be used used create your own private registry.
+   
+   
+Ex: 
+            "docker run -d -p 5000:5000 --name subhash.io registry:2" creates my won registry named "subhash"
+            docker login subhash.io
+            Username: ******
+            password: *******
+            Login succcesful.
+        
+  step1: 
+  you need to tag your image first
+            docker image tag my-image localhost:5000/my-image
+    
+  step2: 
+  push image to private registry
+            docker push localhost:5000/my-image
+            
+  Step3:
+  how to run image
+            docker run subhash.io/apps/first-app
+            docker run subhash.io/db/db-postgree
+        
+                    
+                    
+   
+                      
+                      
         
         
     
