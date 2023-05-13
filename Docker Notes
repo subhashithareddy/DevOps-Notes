@@ -441,6 +441,7 @@ when you install docker(docker engine) on a host machine. we will get 3 componen
         
  Docker manages workspaces(a collection of containers) by using namespaces(a single container) concept
  docker feels when a container is started it has its own PID but the PID will start as host OS as well. 
+ When an container is started, inside container all process will have PID's. At the host machine level will have separate PID's
  Inside container it has a different PID.
  
  
