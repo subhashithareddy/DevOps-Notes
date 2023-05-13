@@ -464,6 +464,37 @@ when you install docker(docker engine) on a host machine. we will get 3 componen
             dokcer run -memory=100m ubuntu---> limits container memory usage upto 100mb of host OS memory
             
             
+docker storage:
+---------------
+When you install docker on a host machine, its stores data as below by default.
+            
+                /var/lib/docker/
+                    /aufs
+                    /containers
+                    /volumes
+                    /images
+
+when a docker container is destroyed all its data will be lost. 
+to prevent data loss , you can create a volume and attach it to container.  docker offers 2 types of mounting.
+
+1) Volume mountin(defauklt docker volume attachement)
+            docker volume create my-sql-storage
+                /var/lib/docker/
+                    /aufs
+                    /containers
+                    /volumes/my-sql-storage/
+                    /images
+  
+            docker run -v my-sql-storage:/var/lib/mysql mysql
+    
+    
+2) Bind mounting:(u can attach any custome disk )
+            docker run -v /data/my-sql-storage:/var/lib/mysql mysql
+ 
+ 
+ 
+            
+            
                 
            
        
