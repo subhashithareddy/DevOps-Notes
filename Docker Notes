@@ -477,7 +477,8 @@ When you install docker on a host machine, its stores data as below by default.
 when a docker container is destroyed all its data will be lost. 
 to prevent data loss , you can create a volume and attach it to container.  docker offers 2 types of mounting.
 
-1) Volume mountin(defauklt docker volume attachement)
+1) Volume mounting(defauklt docker volume attachement)
+   ----------------
             docker volume create my-sql-storage
                 /var/lib/docker/
                     /aufs
@@ -489,7 +490,14 @@ to prevent data loss , you can create a volume and attach it to container.  dock
     
     
 2) Bind mounting:(u can attach any custome disk )
+   -------------
             docker run -v /data/my-sql-storage:/var/lib/mysql mysql
+            
+            
+            
+ -v is old times habbit of mounting volumes. new model is as below.
+ 
+            docker run \ --mount type=bind,source=/data/my-sql-storage,target=/var/lib/mysql mysql
  
  
  
