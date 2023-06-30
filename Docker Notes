@@ -536,3 +536,15 @@ to prevent data loss , you can create a volume and attach it to container.  dock
 
 open -a Docker --> to start docker
 
+
+
+How to zip all docker images in one shot in a machine:
+------------------------------------------------------
+docker save $(docker images --format '{{.Repository}}:{{.Tag}}') -o allfilestoone.tar
+
+
+
+How to load images from a tar file in amchine:
+----------------------------------------------
+docker load -i /tmp/allfilestoone.tar
+
